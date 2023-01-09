@@ -4,15 +4,16 @@ import { useNavigate } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { updateCard } from '../CardSlice';
 
-
-
 const Card1 = (props) => {
+
   const dispatch = useDispatch()
   const navigate = useNavigate()
+
   const clickHandler = (idx)=>{
     dispatch(updateCard(idx))
     navigate('/form')
   }
+  
   return (
     <div style={{cursor:"pointer"}} onClick={()=>clickHandler(props.mainKey)}>
       <Card
